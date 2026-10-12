@@ -1,6 +1,6 @@
 # MYC-MAX MD Analysis Pipeline
 
-This repository contains the Python scripts used for analyzing Molecular Dynamics simulations of the MYC-MAX complex and isolated c-MYC. The analysis pipeline directly mirrors the methodology and results discussed in the associated paper: *MYC-MAX project for ACS Journal Submissions*.
+This repository contains the Python scripts used for analyzing Molecular Dynamics simulations of the MYC-MAX complex and isolated c-MYC. The analysis pipeline directly mirrors the methodology and results discussed in the associated paper: *Identification of Candidate Pockets at the MYC-MAX Interface for Protein-Protein Interaction Disruption*.
 
 ## Results Directory Structure
 All scripts automatically output to the `Results/` directory:
@@ -41,7 +41,7 @@ The files have been intuitively renamed and numbered to follow the analytical st
 - **Outputs:** Saves summary tables and plots to `Results/Pockets/`.
 
 ### 6. `06_multi_method_validation.py`
-- **Paper Section:** 4.3 Triple-method validation
+- **Paper Section:** 4.3 Triple-method consensus
 - **Purpose:** Integrates the results from three independent approaches: MDpocket cavity detection, MM-GBSA per-residue energy decomposition, and persistent salt bridge analysis. Identifies the highest-confidence interface hotspots (residues scoring at least 2 out of 3 methods, e.g., in sub-pocket SP2).
 - **Outputs:** Generates the final consensus table and cross-validation summaries in `Results/Pockets/`.
 

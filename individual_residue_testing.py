@@ -17,9 +17,9 @@ import MDAnalysis as mda
 # ============================== CONFIG ===================================
 STRUCTURE_PDB = "MYC-MAX/MYC-MAX-500/charmm-gui/gromacs/crystal_proteins.pdb"  # topology (atom names/order)
 TRAJECTORY = "MYC-MAX/traj_all_fit_v2.xtc"                                     # the real, aligned, pooled trajectory
-POCKET_GRID_PDB = "Results/Pockets/pocket_definitions/SP1_pocket_grid.pdb" # modify depending on the pocket you want to check
+POCKET_GRID_PDB = "Results/Pockets/pocket_definitions/SP2_pocket_grid.pdb" # modify depending on the pocket you want to check
 
-CHAIN, RESNUM = "B", 254
+CHAIN, RESNUM = "A", 914
 STRIDE = 1  # process every Nth frame 
 CUTOFFS = [3.0, 4.0, 5.0]   # Angstrom - report "fraction of frames within X A" for a few reference distances
 HEAVY_ATOMS_ONLY = True     # exclude hydrogens - see note on HB2 from the static check
