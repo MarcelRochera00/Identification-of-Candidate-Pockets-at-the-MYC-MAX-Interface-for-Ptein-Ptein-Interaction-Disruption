@@ -52,8 +52,8 @@ The files have been intuitively renamed and numbered to follow the analytical st
 
 ## 🛠 Prerequisites
 - **Python 3.8+**
-- **Libraries:** `MDAnalysis`, `numpy`, `pandas`, `matplotlib`, `seaborn`, `scipy`, `gridData`
-- **External Tools:** `gmx_MMPBSA` (for free energy), `mdpocket` (for cavity analysis).
+- **Python Libraries:** `MDAnalysis`, `numpy`, `pandas`, `matplotlib`, `seaborn`, `scipy`, `gridData`
+- **External Tools & Viewers:** `gmx_MMPBSA` (for free energy calculations), `mdpocket` (for cavity analysis), **PyMOL** and **ChimeraX** (for visualizing generated `.pml` and `.cxc` structural scripts).
 
 ## Data Handling & GitHub
 Due to the significant size of Molecular Dynamics trajectories (individual `.xtc` files range from 100MB to 7GB; total project >50GB), raw data files are **excluded** from this repository. 

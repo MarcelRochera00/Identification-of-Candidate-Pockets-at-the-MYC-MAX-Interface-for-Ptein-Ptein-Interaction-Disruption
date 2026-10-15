@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """
-Pocket Characterization (Step 4.1 in Workflow)
+Pocket Characterization
 ==============================================
-Batch analysis pipeline for MDpocket's per-frame descriptor output.
-Processes every sub-pocket (SP1, SP2, ...) found under ROOT_DIR.
+Parses, cleans, and visualizes per-frame MDpocket descriptor outputs 
+across multiple sub-pocket directories (SP1, SP2, etc.).
 
 For each pocket, this script:
-  1. Parses the descriptor file (e.g. SP1_descriptors.txt).
-  2. Adds a time_ns column based on snapshot index.
-  3. Writes descriptors.csv and summary_statistics.csv.
+    1. Parses the descriptor file (e.g. SP1_descriptors.txt).
+    2. Calculates the physical time axis (time_ns) based on snapshot indices.
+    3. Exports per-pocket cleaned CSV data and summary statistics.
 
-After parsing all pockets, it generates:
-  - Combined figures 4.1-4.4 (one per descriptor, one panel per pocket),
-    each showing the per-frame values (grey), the rolling mean and the mean.
-  - Combined figure 4.5 (all descriptors x all pockets), same styling.
-  - 4.6 table: mean of each descriptor + detection frequency per sub-pocket.
-  - pocket_summary_statistics.csv (long format, all descriptors).
-  - pocket_descriptor_report.txt: readable report of the 4 plotted
-    descriptors per pocket, with and without volume-0 frames.
+After processing all sub-pockets, it compiles and generates:
+    - Combined multi-panel figures for primary descriptors (Volume, 
+      Hydrophobicity, Hydrophobic Density, Polarity), overlaying raw 
+      per-frame traces, rolling means, and overall averages.
+    - A grand summary grid figure comparing all descriptors across all pockets.
+    - A compact summary table displaying mean values and detection frequencies.
+    - A long-format combined CSV summary (pocket_summary_statistics.csv).
+    - A comprehensive text report (pocket_descriptor_report.txt) covering 
+      metrics both including and excluding volume-0 (undetected) frames.
 """
 
 from __future__ import annotations

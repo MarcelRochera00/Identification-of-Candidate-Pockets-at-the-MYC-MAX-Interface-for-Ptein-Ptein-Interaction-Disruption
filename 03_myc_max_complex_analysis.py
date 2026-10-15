@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
+
 """
-MYC-MAX Complex Analysis (Step 2 in Workflow)
-=============================================
-Analyses: Interface Contacts, MM-GBSA, Salt Bridges.
-Requires: PSF and XTC files for complex replicas.
-Outputs: Results/Complex/
+MYC-MAX Complex Analysis Pipeline
+=================================
+Performs multi-replica structural analysis on protein-protein complexes, 
+including interface contacts, MM-GBSA binding free energies, hotspot 
+decomposition, and inter-chain salt bridge occupancies.
+
+Pipeline Overview:
+    1. Evaluates per-frame interface contact counts across replicas.
+    2. Runs gmx_MMPBSA calculations to compute binding free energy and 
+       per-residue energy contributions (hotspots).
+    3. Calculates inter-chain salt bridge frequencies and occupancy thresholds.
+    4. Outputs structured summary reports and machine-readable CSVs under Results/Complex/.
 """
 
 import os

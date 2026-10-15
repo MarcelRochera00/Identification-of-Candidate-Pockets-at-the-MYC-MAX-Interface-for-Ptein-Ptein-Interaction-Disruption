@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """
-Multi-Method Cross-Validation & Consensus (Step 4.3 in Workflow)
+Multi-Method Cross-Validation & Consensus Pipeline
 ================================================================
-Analyses: Integrates Hotspot consensus (MM-GBSA, salt bridges) and 
-MDpocket sub-pockets (SP1..SPn) to identify high-confidence targets.
+Integrates Hotspot consensus metrics (MM-GBSA, salt bridges) with MDpocket 
+sub-pocket identification (SP1..SPn) to discover high-confidence binding targets.
 
-Generates the final consensus table and a PyMOL visualization script
-highlighting the cross-validated residues.
+Pipeline Overview:
+    1. Loads and aligns residue data from MM-GBSA calculations, salt bridge 
+       analyses, and spatial sub-pocket centroids.
+    2. Maps residues against pockets using core definitions or extended distance 
+       thresholds.
+    3. Scores and filters cross-validated targets by consensus agreement.
 
-Requires: MDpocket summary CSVs (from pocket identification), 
-          MM-GBSA, and Salt Bridge CSVs.
-Outputs: Results/Pockets/
+Outputs (saved under Results/Pockets/):
+    - cross_validation_unified.csv: Filtered consensus dataset.
+    - 6.1_cross_validation_table.png: Rendered cross-validation summary table.
+    - visualize_cross_validation.pml: Automated PyMOL script to highlight targets.
 """
 
 import os

@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
+
 """
-Individual Protein Analysis (Step 1 in Workflow)
-================================================
-Analyses: RMSD, RMSF, Radius of Gyration (Rg).
-Requires: PSF and XTC files for single-protein replicas.
-Outputs: Results/Individual/
+Individual Protein Analysis Pipeline
+====================================
+Performs multi-replica structural analysis on single-protein trajectories 
+to evaluate baseline stability and conformational dynamics.
+
+Pipeline Overview:
+    1. Loads trajectory replicas and crystal references for structural comparison.
+    2. Computes backbone RMSD, per-residue flexibility (RMSF), and Radius of 
+       Gyration (Rg) across replicas.
+    3. Generates multi-panel summary plots and outputs detailed statistical 
+       reports (frame-level and global replica-level variance) under Results/Individual/.
 """
 
 import os

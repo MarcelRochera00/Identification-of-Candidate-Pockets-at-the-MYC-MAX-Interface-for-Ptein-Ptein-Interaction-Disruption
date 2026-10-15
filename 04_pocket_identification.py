@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
+
 """
+MDpocket Sub-Pocket Identification & ChimeraX Generation Pipeline
+===============================================================
+Processes MDpocket frequency and density grids to detect, segment, and 
+characterize spatial sub-pockets from trajectory data.
 
-Pocket Identification (Step 4.1 in Workflow) - ChimeraX version
-=================================================================
-Processes the frequency grid produced by MDpocket on the concatenated trajectory:
-  1. Thresholds grid at ISOVALUE.
-  2. Identifies distinct spatial sub-pockets (connected voxel blobs).
-  3. Identifies lining residues for each sub-pocket.
-  4. Outputs summary tables, residue lists, and a ChimeraX visualization script
-     (.cxc) that also renders a high-resolution image.
+Pipeline Overview:
+    1. Thresholds frequency grids by isovalue and extracts connected voxel 
+       blobs using spatial clustering.
+    2. Samples alpha-sphere density metrics and maps lining residues based 
+       on nearest-voxel spatial cutoffs.
+    3. Generates summary tables, residue mapping CSVs, definitions for 
+       round-2 targeted tracking, and a fully automated ChimeraX visualization 
+       script (`.cxc`) complete with a high-resolution render.
 
-Requires: numpy, scipy, gridData, MDAnalysis, matplotlib
 """
 
 import csv

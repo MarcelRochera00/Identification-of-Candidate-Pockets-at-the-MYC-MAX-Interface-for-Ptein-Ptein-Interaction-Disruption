@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
+
 """
-Comparative MD analysis: MYC alone vs MYC:MAX complex
-Metrics: RMSD, RMSF, Radius of Gyration — 3 replicas each condition
-Goal: Show MYC is stabilized upon MAX binding
+Comparative MD Analysis: MYC Alone vs. MYC:MAX Complex
+======================================================
+Performs comparative molecular dynamics analysis across multiple replicas 
+to evaluate structural stability metrics (RMSD, RMSF, and Radius of Gyration).
+
+Pipeline Overview:
+    1. Loads trajectories and crystal state references for MYC alone and 
+       the isolated MYC chain from the MYC:MAX complex.
+    2. Computes backbone RMSD relative to reference structures, per-residue 
+       flexibility (RMSF), and Radius of Gyration (Rg).
+    3. Generates comparative multi-panel figures and outputs comprehensive 
+       statistical tables to evaluate stabilization effects upon binding.
 """
+
 import os
 import numpy as np
 import matplotlib.pyplot as plt
